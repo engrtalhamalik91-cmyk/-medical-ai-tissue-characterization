@@ -1,45 +1,63 @@
-# Automated Tissue Characterization and Fibrosis Scoring in Portable Ultrasound via Lightweight Convolutional Neural Networks
+# AI-Driven Multi-Task CNN for Concurrent Hepatic Fibrosis Staging and Focal Lesion Characterization on Grayscale Ultrasound
 
-This repository contains the official implementation of a lightweight Deep Learning framework designed for automated  tissue characterization and fibrosis scoring. Optimised specifically for low-resource environments and handheld edge devices, this solution bridges the gap between high-end hospital diagnostics and point-of-care medical technology.
+This repository contains the official production-grade implementation of a lightweight Multi-Task Deep Learning framework designed for automated hepatic tissue characterization, multi-stage liver fibrosis scoring (F0–F4), and binary focal liver lesion differentiation (Hepatocellular Carcinoma vs. Hepatic Hemangioma). 
 
-## 🌟 Key Features
-- **Lightweight CNN Architecture:** Tailored with optimized convolutional layers to perform real-time image processing on low-power hardware (handheld/portable ultrasound probes).
-- **Quantitative Fibrosis Scoring:** Computes automated scoring and severity grading to standardize diagnosis and minimize inter-observer variability among clinicians.
-- **MedTech & Clinical Synergy:** Developed by synthesizing 10 years of clinical biomedical engineering experience with advanced data science methods.
+Optimised specifically for low-resource point-of-care environments and handheld B-mode grayscale ultrasound edge probes, this solution bridges the gap between raw medical hardware telemetry and standard diagnostic digital health frameworks.
 
-## 🛠️ Tech Stack & Libraries
-- **Programming Language:** Python 3.x
-- **Deep Learning Frameworks:** TensorFlow / Keras _(or PyTorch - please modify based on your choice)_
-- **Medical Image Processing:** OpenCV, SciPy, NumPy, Scikit-Image
-- **Data Analytics & Visualization:** Pandas, Matplotlib, Seaborn
+## 🌟 Key Architectural Features
+- **Lightweight CNN Architecture:** Tailored with optimized convolutional layers (scaling features from 32 to 192 dimensions across 8 residual blocks) deploying exactly 2,149,833 parameters for ultra-low latency inference on resource-constrained handheld systems.
+- **Asymmetric Loss Masking:** Features structured data manifests using a target index matrix mask of `-100` to completely bypass gradient derivations on unannotated tasks across hybrid clinical datasets.
+- **Data Contamination Control:** Deploys a robust 64-bit difference hashing (`dHash` with a strict Hamming distance threshold ≤ 2) combined with SHA-256 cryptographic checking to isolate near-duplicate structures and prevent cross-split dataset leakage.
 
-## 📁 Repository Structure
-```text
-├── models/             # Custom lightweight CNN model architectures (.py or .ipynb)
-├── utils/              # Ultrasound image preprocessing, filtering, and normalization scripts
-├── notebooks/          # Jupyter Notebooks detailing model training and validation loops
-├── .gitignore          # Standard Python gitignore profile
-└── README.md           # Project documentation and repository overview
-```
+## 🛠️ Tech Stack & Requirements
+- **Language Profile:** Python 3.10+
+- **Deep Learning Framework:** TensorFlow / Keras (or PyTorch equivalent architecture layer mappings)
+- **Pre-Processing & Topology Engines:** OpenCV, SciPy (Topological Peak Finders & Noise Filters), NumPy, Scikit-Image
+- **Data Analysis & Visualization Logs:** Pandas, SQLite Database (Configured with automated B-Tree indexing benchmarks), Matplotlib, Seaborn
 
-## 🔬 Research Context & Technical Impact
-This repository forms the technical core of an active research publication: *Automated Tissue Characterization and Fibrosis Scoring in Portable Ultrasound via Lightweight Convolutional Neural Networks*. 
+---
 
-By deploying compressed, highly efficient deep learning models directly onto portable scanners, this project aims to democratize access to advanced screening tools. It aligns closely with digital health trends and international medical device integration frameworks.
-<img width="1620" height="720" alt="image" src="https://github.com/user-attachments/assets/13e304c8-77e0-4601-a4ab-931971226283" />
-<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/9a9c227e-4f73-4d84-9bf0-3fa1b705cb31" />
-<img width="1620" height="720" alt="image" src="https://github.com/user-attachments/assets/40ec54e4-6e4c-4e76-ac4a-0f428f7f366a" />
-<img width="1260" height="1080" alt="image" src="https://github.com/user-attachments/assets/694c4db2-5c3c-4524-86fe-ad6901be15c2" />
-<img width="1620" height="720" alt="image" src="https://github.com/user-attachments/assets/5edf1d91-07ab-408e-8519-33470f049974" />
-<img width="1980" height="810" alt="image" src="https://github.com/user-attachments/assets/4d2ebda6-01df-4f75-a626-2a992cf154a3" />
+## 📊 Empirical Telemetry & Diagnostic Visualizations
 
-## 🔒 Data Privacy & Compliance Statement
-*To comply with medical data confidentiality rules, patient safety ethics, and institutional health regulations, the raw diagnostic ultrasound datasets utilized during model training are strictly confidential and are not hosted within this public repository.*
+### 1. Dual-Task Shared Optimization Tracking
+The system convergence loops were controlled using an early-stopping patience boundary of 12 epochs driven strictly by the task-mean validation macro-F1 targets. Standalone baselines stabilized at Epoch 45 (fibrosis) and Epoch 34 (lesion), while multi-task joint optimization peaked smoothly at Epoch 56 out of a maximum 60-epoch budget.
+
+<p align="center">
+  <img src="https://github.com" width="70%" alt="Model Training History Loops Mapping"/>
+</p>
+
+### 2. Primary Diagnostic Evaluation Matrices
+Evaluating empirical classification performance constraints on frozen image-level held-out test splits. Shared feature extraction achieved an overall diagnostic accuracy of 71.02% for five-stage parenchymal tissue staging and a 97.51% boundary for focal lesion characterization.
+
+<p align="center">
+  <img src="https://github.com" width="55%" alt="Hepatic Fibrosis Evaluation Matrix Layout Grid"/>
+</p>
+
+### 3. Quantitative Performance Distributions
+Validation tracking curves display high stability. The single-task baseline lesion configuration yields an image-level accuracy threshold of 98.50% (395/401), while joint multi-head representational learning stabilizes focal lesion grading tasks at a balanced macro-F1 profile of 0.9750.
+
+<p align="center">
+  <img src="https://github.com" width="70%" alt="Task-Specific Diagnostic Accuracy Distributions Data-Plots"/>
+</p>
+
+### 4. Qualitative Interpretability & Grad-CAM Heatmaps
+Grad-CAM evaluations are hosted strictly for qualitative model attention tracking and saliency inspection inside B-mode ultrasound frames. Saliency mappings verify feature extraction patterns across target lesion zones and progressive parenchymal tissue alterations.
+
+<p align="center">
+  <img src="https://github.com" width="48%" style="margin-right: 2%;" alt="Grad-CAM Saliency Output for Benign Hepatic Hemangioma Pathology Metrics"/>
+  <img src="https://github.com" width="48%" alt="Grad-CAM Saliency Tracking Mappings for Progressive Hepatic Parenchymal Alterations Baseline"/>
+</p>
+
+*Cautionary Notice: Grad-CAM vectors denote visual region-of-interest attention weights within the convolutional hidden layers and do not constitute formal absolute spatial localization bounds or independent diagnostic clinical confirmation.*
+
+---
+
+## 🔒 Clinical Constraints & Medical Data Privacy Compliance
+*To maintain compliance with national patient safety ethics, institutional data confidentiality frameworks, and global hospital tracking regulations, the raw diagnostic B-mode ultrasound imagery arrays used during training loops are strictly confidential and are not hosted within this public code portal environment.*
 
 ## 👤 Author & Professional Background
-**Biomedical Engineer & Healthcare Data Scientist**
-- **10+ Years of Professional Experience** in Biomedical Engineering and Critical Hospital Management.
-- **Certified Expertise:** Data Analytics Essentials & Python (Cisco), Fundamentals of Hospital Management.
-- **Quality & Regulation:** Specializing in **ISO 13485** (Medical Devices — Quality Management Systems) for global regulatory compliance.
+**Independent Healthcare AI Architect & Biomedical Engineer**
+- **10+ Years of Hands-on Clinical Experience** in core Biomedical Engineering pipelines and critical Hospital Systems Management infrastructure.
+- **Certified Expertise Profiles:** Data Analytics Essentials & Python (Cisco Integration Frameworks), Fundamentals of Healthcare Systems Management.
+- **Quality Engineering Standards:** Specializing in **ISO 13485** Medical Devices Quality Management Systems (QMS) protocols for global Software as a Medical Device (SaMD) structural integrations.
 - **Research Profile:** Focused on developing software as a medical device (SaMD) with previous publications in neurological image analysis (Alzheimer's pathology detection) and assistive UI frameworks (Eye Mouse systems).
-
