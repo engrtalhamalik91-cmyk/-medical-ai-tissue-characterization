@@ -1,6 +1,6 @@
 # Automated Tissue Characterization and Fibrosis Scoring in Portable Ultrasound via Lightweight Convolutional Neural Networks
 
-This repository contains the official implementation of a lightweight Deep Learning framework designed for automated respiratory tissue characterization and fibrosis scoring. Optimised specifically for low-resource environments and handheld edge devices, this solution bridges the gap between high-end hospital diagnostics and point-of-care medical technology.
+This repository contains the official implementation of a lightweight Deep Learning framework designed for automated  tissue characterization and fibrosis scoring. Optimised specifically for low-resource environments and handheld edge devices, this solution bridges the gap between high-end hospital diagnostics and point-of-care medical technology.
 
 ## 🌟 Key Features
 - **Lightweight CNN Architecture:** Tailored with optimized convolutional layers to perform real-time image processing on low-power hardware (handheld/portable ultrasound probes).
