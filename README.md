@@ -23,29 +23,35 @@ Optimised specifically for low-resource point-of-care environments and handheld 
 The system convergence loops were controlled using an early-stopping patience boundary of 12 epochs driven strictly by the task-mean validation macro-F1 targets. Standalone baselines stabilized at Epoch 45 (fibrosis) and Epoch 34 (lesion), while multi-task joint optimization peaked smoothly at Epoch 56 out of a maximum 60-epoch budget.
 
 <p align="center">
-  <img src="https://github.com" width="75%" alt="Model Training Loss and Mean Validation Macro-F1 History History Mappings"/>
+ <img width="1620" height="720" alt="image" src="https://github.com/user-attachments/assets/4096395e-94d8-4f94-bb24-5f4acfe1ab9b" />
+
 </p>
 
 ### 2. Primary Diagnostic Evaluation Matrices
 Evaluating empirical classification performance constraints on frozen image-level held-out test splits. Shared feature extraction achieved an overall diagnostic accuracy of 71.02% for five-stage parenchymal tissue staging and a 97.51% boundary for focal lesion characterization.
 
 <p align="center">
-  <img src="https://github.com" width="60%" alt="Concurrent Model Hepatic Fibrosis Confusion Matrix Metrics Grid"/>
+  <img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/f4f34094-58eb-40c6-aa36-19789936b964" />
+
 </p>
 
 ### 3. Quantitative Performance Distributions
 Validation tracking curves display high stability. The single-task baseline lesion configuration yields an image-level accuracy threshold of 98.50% (395/401), while joint multi-head representational learning stabilizes focal lesion grading tasks at a balanced macro-F1 profile of 0.9750.
 
 <p align="center">
-  <img src="https://github.com" width="75%" alt="Focal Tumor Staging Metrics Precision Recall and F1 Distributions Data Plots"/>
+  <img width="1620" height="720" alt="image" src="https://github.com/user-attachments/assets/d82a3e03-5e28-4ea5-9c05-c4b05aa00512" />
+  <img width="1980" height="810" alt="image" src="https://github.com/user-attachments/assets/0786f908-a897-4416-b56b-e9f9be37260f" />
+
+
 </p>
 
 ### 4. Qualitative Interpretability & Grad-CAM Heatmaps
 Grad-CAM evaluations are hosted strictly for qualitative model attention tracking and saliency inspection inside B-mode ultrasound frames. Saliency mappings verify feature extraction patterns across target lesion zones and progressive parenchymal tissue alterations.
 
 <p align="center">
-  <img src="https://github.com" width="48%" style="margin-right: 2%;" alt="Grad-CAM Hidden Layer Attention Tracking for Benign Hepatic Hemangioma Pathology"/>
-  <img src="https://github.com" width="48%" alt="Grad-CAM Saliency Output Mapping for Progressive Hepatic Parenchymal Alterations Staging Baseline"/>
+  <img width="1620" height="720" alt="image" src="https://github.com/user-attachments/assets/e0278047-bd9e-4658-ba17-2d58a7378fa9" />
+<img width="1980" height="810" alt="image" src="https://github.com/user-attachments/assets/0161f1b9-9b96-4cc1-9daa-dafe0a7aad24" />
+
 </p>
 
 *Cautionary Notice: Grad-CAM vectors denote visual region-of-interest attention weights within the convolutional hidden layers and do not constitute formal absolute spatial localization bounds or independent diagnostic clinical confirmation.*
