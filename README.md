@@ -1,10 +1,9 @@
 # Automated Tissue Characterization and Fibrosis Scoring in Portable Ultrasound via Lightweight Convolutional Neural Networks
 
-This repository contains the official implementation of a lightweight Deep Learning framework designed for automated respiratory tissue characterization and pulmonary fibrosis scoring. Optimised specifically for low-resource environments and handheld edge devices, this solution bridges the gap between high-end hospital diagnostics and point-of-care medical technology.
+This repository contains the official implementation of a lightweight Deep Learning framework designed for automated respiratory tissue characterization and fibrosis scoring. Optimised specifically for low-resource environments and handheld edge devices, this solution bridges the gap between high-end hospital diagnostics and point-of-care medical technology.
 
 ## 🌟 Key Features
 - **Lightweight CNN Architecture:** Tailored with optimized convolutional layers to perform real-time image processing on low-power hardware (handheld/portable ultrasound probes).
-- **Automated Respiratory Tissue Characterization:** Differentiates between healthy lung tissue baselines and pathological fibrotic abnormalities.
 - **Quantitative Fibrosis Scoring:** Computes automated scoring and severity grading to standardize diagnosis and minimize inter-observer variability among clinicians.
 - **MedTech & Clinical Synergy:** Developed by synthesizing 10 years of clinical biomedical engineering experience with advanced data science methods.
 
@@ -26,7 +25,7 @@ This repository contains the official implementation of a lightweight Deep Learn
 ## 🔬 Research Context & Technical Impact
 This repository forms the technical core of an active research publication: *Automated Tissue Characterization and Fibrosis Scoring in Portable Ultrasound via Lightweight Convolutional Neural Networks*. 
 
-By deploying compressed, highly efficient deep learning models directly onto portable scanners, this project aims to democratize access to advanced pulmonary screening tools. It aligns closely with digital health trends and international medical device integration frameworks.
+By deploying compressed, highly efficient deep learning models directly onto portable scanners, this project aims to democratize access to advanced screening tools. It aligns closely with digital health trends and international medical device integration frameworks.
 <img width="1620" height="720" alt="image" src="https://github.com/user-attachments/assets/13e304c8-77e0-4601-a4ab-931971226283" />
 <img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/9a9c227e-4f73-4d84-9bf0-3fa1b705cb31" />
 <img width="1620" height="720" alt="image" src="https://github.com/user-attachments/assets/40ec54e4-6e4c-4e76-ac4a-0f428f7f366a" />
